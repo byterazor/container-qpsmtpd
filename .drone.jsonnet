@@ -136,12 +136,12 @@ local push_pipelines(versions, architectures) = [
                     ]
                     +
                     [
-                    "buildah manifest add redmine:" + version.tag + " registry.cloud.federationhq.de/" + image_name + ":"+version.tag + "-" + arch 
+                    "buildah manifest add " + image_name + ":" + version.tag + " registry.cloud.federationhq.de/" + image_name + ":"+version.tag + "-" + arch 
                     for arch in architectures
                     ]
                     +
                     [
-                        "buildah manifest push --all redmine:"+version.tag + " docker://registry.cloud.federationhq.de/" + image_name +":"+tag
+                        "buildah manifest push --all " + image_name +":"+version.tag + " docker://registry.cloud.federationhq.de/" + image_name +":"+tag
                         for tag in [version.tag]+version.additional_tags
                     ]
                     +
