@@ -4,7 +4,7 @@ local image_name = "qpsmtpd";
 
 local github_repo_name = "container-qpsmtpd";
 local github_desc = "Container for runnung qpsmtpd";
-local url = "https://gitea.federationhq.de/Container/qpsmtpd"
+local url = "https://gitea.federationhq.de/Container/qpsmtpd";
 
 local version_1_0_0 = 
 {
