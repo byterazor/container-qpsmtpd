@@ -9,7 +9,7 @@ chown -R smtpd:smtpd /var/spool/qpsmtpd
 export QPSMTPD_plugin_dirs=/usr/share/qpsmtpd/plugins
 export QPSMTPD_spool_dir=/var/spool/qpsmtpd
 
-if [ -z ${QPSMTPD_plugins}] then
+if [ -z ${QPSMTPD_plugins} ]; then
     echo "no plugins configuration available. Please provide one in QPSMTPD_plugins."
     exit 1
 fi 
