@@ -30,7 +30,10 @@ COPY --from=qpsmtpd-setup /tmp/qpsmtpd/plugins /usr/share/qpsmtpd/plugins
 COPY --from=qpsmtpd-setup /tmp/qpsmtpd/lib     /usr/share/perl5/ 
 COPY --from=qpsmtpd-setup /tmp/QPSMTPD-MailserverInterface/federationhq_rcpt /usr/share/qpsmtpd/plugins/federationhq_rcpt
 COPY --from=qpsmtpd-setup /tmp/QPSMTPD-MailserverInterface/clamdscan /usr/share/qpsmtpd/plugins/virus/clamdscan
+COPY --from=qpsmtpd-setup /tmp/QPSMTPD-MailserverInterface/queue/lmtp /usr/share/qpsmtpd/plugins/queue/lmtp
 RUN cpanm Net::ClamAV::Client 
+RUN cpanm Net::LMTP
+
 # create spool directory
 RUN mkdir -p /var/spool/qpsmtpd
 RUN chown smtpd:smtpd /var/spool/qpsmtpd
