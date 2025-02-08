@@ -16,7 +16,7 @@ RUN apt-get update && apt-get -qy install perl-base tini bash
 # qpsmtpd dependencies
 RUN apt-get -qy install libnet-dns-perl libmime-base64-urlsafe-perl libtimedate-perl 
 RUN apt-get -qy install libmailtools-perl libnet-ip-perl libdbd-mariadb-perl libdbd-mysql-perl 
-RUN apt-get -qy install libclamav-client-perl cpanminus libmoose-perl libyaml-dev
+RUN apt-get -qy install libclamav-client-perl cpanminus libmoose-perl libyaml-dev libyaml-perl  libyaml-libyaml-perl
 
 
 # qpsmtpd runs under the smtpd user
