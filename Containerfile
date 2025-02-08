@@ -33,6 +33,8 @@ COPY --from=qpsmtpd-setup /tmp/QPSMTPD-MailserverInterface/clamdscan /usr/share/
 COPY --from=qpsmtpd-setup /tmp/QPSMTPD-MailserverInterface/Net/LMTP.pm /usr/share/perl5/Net/LMTP.pm
 COPY --from=qpsmtpd-setup /tmp/QPSMTPD-MailserverInterface/queue/lmtp /usr/share/qpsmtpd/plugins/queue/lmtp
 RUN cpanm Net::ClamAV::Client 
+RUN cpanm Minion
+RUN cpanm Minion::Backend::mysql
 
 # create spool directory
 RUN mkdir -p /var/spool/qpsmtpd
